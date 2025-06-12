@@ -170,7 +170,7 @@ with col2:
     # שימוש בקונטיינר כדי לעטוף את התמונה ולהפעיל אירוע לחיצה
     with st.container():
         # הצגת התמונה
-        st.image("assets/profile.png", use_container_width=True)
+        st.image("assets/profile.png", use_column_width=True)
         
         # כאשר לוחצים על כפתור "לחץ על התמונה", נפעיל את אנימציית הבלונים
         if st.button("לחץ על התמונה לאפקט מיוחד!"):
@@ -275,27 +275,24 @@ with col2:
     """, unsafe_allow_html=True)
 
 # יצירת קשר
-st.markdown("""
-<div class="contact-section rtl-text">
-    <h2 class="center-text">יצירת קשר</h2>
-    <p>מעוניינים בהרצאה או סדנה? השאירו פרטים ואחזור אליכם בהקדם:</p>
-    
-    <form>
-        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-            <input type="text" placeholder="שם מלא" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-            <input type="email" placeholder="אימייל" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-        </div>
-        <div style="margin-bottom: 10px;">
-            <input type="tel" placeholder="טלפון" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-        </div>
-        <div style="margin-bottom: 10px;">
-            <textarea placeholder="הודעה" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"></textarea>
-        </div>
-        <button type="button" style="background-color: #3B82F6; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;">שליחה</button>
-    </form>
-</div>
-""", unsafe_allow_html=True)
+# יצירת קשר
+st.markdown('<h2 class="center-text">יצירת קשר</h2>', unsafe_allow_html=True)
+st.markdown('<p class="rtl-text">מעוניינים בהרצאה או סדנה? השאירו פרטים ואחזור אליכם בהקדם:</p>', unsafe_allow_html=True)
 
+# שימוש ברכיבי Streamlit במקום HTML ישיר
+col1, col2 = st.columns(2)
+with col1:
+    name = st.text_input("שם מלא", key="name")
+with col2:
+    email = st.text_input("אימייל", key="email")
+
+phone = st.text_input("טלפון", key="phone")
+message = st.text_area("הודעה", height=100, key="message")
+
+if st.button("שליחה", type="primary", key="send_btn"):
+    # כאן תוכל להוסיף קוד שיטפל בשליחת הטופס
+    st.success("תודה! ההודעה נשלחה בהצלחה. אחזור אליך בהקדם.")
+    
 # מידע נוסף
 st.markdown("""
 <div class="rtl-text" style="margin-top: 30px;">
