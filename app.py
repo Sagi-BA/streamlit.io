@@ -170,7 +170,7 @@ with col2:
     # שימוש בקונטיינר כדי לעטוף את התמונה ולהפעיל אירוע לחיצה
     with st.container():
         # הצגת התמונה
-        st.image("assets/profile.png", use_column_width=True)
+        st.image("assets/profile.png", use_container_width=True)
         
         # כאשר לוחצים על כפתור "לחץ על התמונה", נפעיל את אנימציית הבלונים
         if st.button("לחץ על התמונה לאפקט מיוחד!"):
