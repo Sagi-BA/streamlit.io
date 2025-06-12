@@ -170,7 +170,9 @@ with col2:
     # שימוש בקונטיינר כדי לעטוף את התמונה ולהפעיל אירוע לחיצה
     with st.container():
         # הצגת התמונה
-        st.image("assets/profile.png", use_column_width=True)
+        st.image("assets/profile.png", use_container_width=True, caption="שגיא בר און - מומחה בינה מלאכותית")
+
+        # st.image("assets/profile.png", use_container_width=True, caption="שגיא בר און - מומחה בינה מלאכותית", class_="profile-pic")
         
         # כאשר לוחצים על כפתור "לחץ על התמונה", נפעיל את אנימציית הבלונים
         if st.button("לחץ על התמונה לאפקט מיוחד!"):
@@ -292,7 +294,7 @@ message = st.text_area("הודעה", height=100, key="message")
 if st.button("שליחה", type="primary", key="send_btn"):
     # כאן תוכל להוסיף קוד שיטפל בשליחת הטופס
     st.success("תודה! ההודעה נשלחה בהצלחה. אחזור אליך בהקדם.")
-    
+
 # מידע נוסף
 st.markdown("""
 <div class="rtl-text" style="margin-top: 30px;">
@@ -335,10 +337,15 @@ st.markdown("""
 <div class="footer">
     <p>© כל הזכויות שמורות לשגיא בר און 2025 | מומחה בינה מלאכותית ומרצה</p>
     <p>
-        <a href="#" style="margin: 0 10px; color: #3B82F6;">LinkedIn</a>
-        <a href="#" style="margin: 0 10px; color: #3B82F6;">Twitter</a>
-        <a href="#" style="margin: 0 10px; color: #3B82F6;">Facebook</a>
-        <a href="#" style="margin: 0 10px; color: #3B82F6;">YouTube</a>
+        <a href="https://linktr.ee/sagib?lt_utm_source=lt_share_link#373198503" target="_blank" style="margin: 0 10px; color: #3B82F6;">Linktree</a>
+        <a href="https://www.facebook.com/sagi.baron" target="_blank" style="margin: 0 10px; color: #3B82F6;">Facebook</a>
+        <a href="https://www.linkedin.com/in/sagi-bar-on" target="_blank" style="margin: 0 10px; color: #3B82F6;">LinkedIn</a>
+        <a href="https://api.whatsapp.com/send?phone=972549995050" target="_blank" style="margin: 0 10px; color: #3B82F6;">WhatsApp</a>
+        <a href="https://whatsapp.com/channel/0029Vaj33VkEawds11JP9o1c" target="_blank" style="margin: 0 10px; color: #3B82F6;">ערוץ AI</a>
+        <a href="https://whatsapp.com/channel/0029Vaj33VkEawds11JP9o1c" target="_blank" style="margin: 0 10px; color: #3B82F6;">קבוצת AI</a>
+        <a href="https://www.youtube.com/@SagiBaron" target="_blank" style="margin: 0 10px; color: #3B82F6;">YouTube</a>
+        <a href="mailto:sagi.baron76@gmail.com" style="margin: 0 10px; color: #3B82F6;">Email</a>
+        <a href="https://buymeacoffee.com/sagibar" target="_blank" style="margin: 0 10px; color: #3B82F6;">פרגנו בבירה</a>
     </p>
 </div>
 """, unsafe_allow_html=True)
